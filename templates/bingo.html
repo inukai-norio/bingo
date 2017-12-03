@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ dict_data.imgid }}番目</title>
+</head>
+<body>
+    <figure>
+        <img src="{{ dict_data.file }}">
+        <figcaption>{{ dict_data.name }}さん</figcaption>
+    </figure>
+    <a href="{{ url_for('t', content_id=dict_data.next) }}">次の番号</a>
+</body>
+</html>
