@@ -11,3 +11,54 @@ body {
   padding: 1rem 2rem;
   text-decoration: none;
 }
+
+.app {
+  height: 100vh;
+}
+
+.staff-photo {
+  & {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .staffid {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    padding: .8rem 2rem;
+    background-color: skyblue;
+
+    font-size: 7rem;
+  }
+
+  .name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: block;
+    padding: .8rem 2rem;
+    background-color: skyblue;
+
+    font-size: 6rem;
+  }
+}
+
+.clickable-area {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.staff-content {
+}

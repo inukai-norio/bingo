@@ -10,17 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inukai-norio/bingo.git"
+    "url": "git+https://github.com/yaktak/bingo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inukai-norio/bingo/issues"
+    "url": "https://github.com/yaktak/bingo/issues"
   },
-  "homepage": "https://github.com/inukai-norio/bingo#readme",
+  "homepage": "https://github.com/yaktak/bingo#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
     "node-sass": "^4.7.2",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.4"
   }
 }

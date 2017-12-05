@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>{{ dict_data.imgid }}番目</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tachyons.min.css') }}">
-</head>
-<body>
-    <figure>
-        <img src="{{ dict_data.file }}">
-        <figcaption>{{ dict_data.name }}さん</figcaption>
-    </figure>
-    <a href="{{ url_for('t', content_id=dict_data.next) }}">次の番号</a>
-</body>
+  </head>
+  <body>
+    <div class="app">
+
+      <div class="staff-photo" style="background-image: url({{ dict_data.file }})">
+        <span class="staffid">S10</span>
+        <span class="name">{{ dict_data.name }}さん</span>
+      </div>
+
+      <a class="clickable-area" href="{{ url_for('t', content_id=dict_data.next) }}">次の番号</a>
+    </div>
+  </body>
 </html>
