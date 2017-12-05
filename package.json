@@ -1,0 +1,25 @@
+{
+  "name": "bingo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --include-path static/scss static/scss/style.scss static/css/style.css",
+    "watch": "nodemon -e scss -x \"npm run build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaktak/bingo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaktak/bingo/issues"
+  },
+  "homepage": "https://github.com/yaktak/bingo#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.12.4"
+  }
+}
