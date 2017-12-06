@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from random import shuffle
+import random
 from flask import Flask, redirect, render_template, url_for
 
 app = Flask(__name__)
@@ -61,8 +61,24 @@ def t(content_id):
     for row in c.execute(sql_stmt, [content_id]):
         dict_data = row
     dict_data['name'] = img[dict_data['imgkey']]
-    filename = 'img/' + dict_data['imgkey'] + '.png'
-    dict_data['file'] = url_for('static', filename=filename)
+    file_list = []
+    while len(file_list) == 0:
+        file_list = random.sample(list(img.keys()), 4)
+        if dict_data['imgkey'] in file_list:
+            file_list = []
+        else:
+            file_list.append(dict_data['imgkey'])
+            random.shuffle(file_list)
+    for i in range(5):
+        if file_list(i) == dict_data['imgkey']:
+            fileno = i
+            break
+    filename_list = []
+    for one_file in file_list:
+        filename = 'img/' + one_file + '.png'
+        filename_list.append(url_for('static', filename=filename))
+    dict_data['file'] = filename_list
+    dict_data['fileno'] = fileno
     dict_data['next'] = dict_data['imgid'] + 1
     app.logger.debug(dict_data)
 
@@ -95,7 +111,7 @@ if __name__ == '__main__':
         c.execute(sql_stmt)
 
         img_s = list(img.keys())
-        shuffle(img_s)
+        random.shuffle(img_s)
         purchases = []
         for i in range(len(img_s)):
             purchases.append((i, img_s[i]))
