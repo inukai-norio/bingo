@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>{{ dict_data.imgid }}番目</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/tachyons.min.css') }}">
   </head>
   <body>
     <div class="app">
@@ -12,6 +11,13 @@
 file がリストに変更
 fileno が実際に表示する番号
 -->
+
+      {% for photo in dict_data.file %}
+      <img class="photo" src="{{ photo }}" alt="">
+      {% endfor %}
+
+      <div>{{ dict_data.fileno }}</div>
+
       <div class="staff-photo" style="background-image: url({{ dict_data.file }})">
         <span class="staffid">{{ dict_data.imgkey }}</span>
         <span class="name">{{ dict_data.name }}さん</span>

@@ -70,7 +70,7 @@ def t(content_id):
             file_list.append(dict_data['imgkey'])
             random.shuffle(file_list)
     for i in range(5):
-        if file_list(i) == dict_data['imgkey']:
+        if file_list[i] == dict_data['imgkey']:
             fileno = i
             break
     filename_list = []
