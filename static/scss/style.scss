@@ -1,63 +1,118 @@
 @import "vendor/tachyons.min";
+@import "vendor/buttons";
   
-body {
+html {
+  width: 100%;
+  height: 100%;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* トップページ */
 .bingo-start-btn { 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   padding: 1rem 2rem;
   text-decoration: none;
 }
 
+/* メインページ */
 .app {
-  height: 100vh;
-}
-
-.staff-photo {
   & {
     position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 100%;
   }
 
-  .staffid {
+  > .bingo-roulette {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ルーレット */
+.bingo-roulette {
+  & {
+    position: relative;
+    background-color: #000;
+
+    overflow: hidden;
+  }
+
+  > .roulette {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    width: 80%;
+    height: 80%;
+
+  }
+
+  > .roulette img {
+    width: 100%;
+  }
+
+  > .buttons {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+  }
+
+  > .staff-id,
+  > .staff-name {
+    position: absolute;
+    display: none;
     padding: .8rem 2rem;
     background-color: skyblue;
+  }
+
+  > .staff-id {
+    top: 0;
+    left: 0;
 
     font-size: 7rem;
   }
 
-  .name {
-    position: absolute;
+  > .staff-name {
     bottom: 0;
     right: 0;
-
-    display: block;
-    padding: .8rem 2rem;
-    background-color: skyblue;
 
     font-size: 6rem;
   }
 }
 
-.clickable-area {
-  position: absolute;
-  top: 0;
+.start-button {
+  & {
+    display: block;
+    width: 20rem;
+    padding: 1rem 2rem;
 
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-}
+    background-color: #fff;
+    cursor: inherit;
+    color: black;
 
-.staff-content {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &.-next {
+    text-decoration: none;
+  }
 }
