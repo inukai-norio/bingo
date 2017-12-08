@@ -5,24 +5,33 @@
     <title>{{ dict_data.imgid }}番目</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
+
   <body>
     <div class="app">
 
-      {% for photo in dict_data.file %}
-      <img class="photo" src="{{ photo }}" alt="">
-      {% endfor %}
+      <div class="bingo-roulette">
+        <div class="container">
+          <div id="js-roulette" class="roulette">
+            {% for photo in dict_data.file %}
+            <img class="photo" src="{{ photo }}" alt="photo">
+            {% endfor %}
+          </div>
 
-      <div>{{ dict_data.fileno }}</div>
+          <span id="js-staff-id" class="staff-id">{{ dict_data.imgkey }}</span>
+          <span id="js-staff-name" class="staff-name">{{ dict_data.name }}さん</span>
+        </div>
 
-      <div class="staff-photo" style="background-image: url({{ dict_data.file }})">
-        <span class="staffid">{{ dict_data.imgkey }}</span>
-        <span class="name">{{ dict_data.name }}さん</span>
+        <div class="buttonarea">
+          <span id="js-roulette-start" class="start-button"><a class="button"></a></span>
+        </div>
+
       </div>
 
-      <a class="clickable-area" href="{{ url_for('t', content_id=dict_data.next) }}">次の番号</a>
     </div>
   </body>
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
   <script src="{{ url_for('static', filename='js/roulette.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bingo.js') }}" data-img-number="{{ dict_data.fileno }}"></script>
 </html>
