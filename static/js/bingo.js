@@ -6,8 +6,7 @@ $(function () {
   var staffName = $('#js-staff-name');
   var start = $('#js-roulette-start');
   var stop = undefined;
-
-  $(start).width($(start).height());
+  var next = $('#js-next-page');
 
   var showStaffInfo = function (id, name) {
     id.show();
@@ -15,22 +14,27 @@ $(function () {
   };
 
   var option = {
-    speed : 50,
-    duration : 4,
-    stopImageNumber : dataset.imgNumber,
+    speed: 50,
+    duration: 4,
+    stopImageNumber: dataset.imgNumber,
 
-    startCallback : function() {
+    // ルーレット回転開始
+    startCallback: function() {
+      start.hide();
       console.log('start');
     },
 
-    slowDownCallback : function() {
+    // ルーレット減速開始
+    slowDownCallback: function() {
       console.log('slowDown');
     },
 
-    stopCallback : function($stopElm) {
+    // ルーレット停止
+    stopCallback: function($stopElm) {
       console.log('stop');
 
       showStaffInfo(staffId, staffName);
+      next.show();
     }
   }
 
@@ -46,5 +50,10 @@ $(function () {
   stop.click(function(){
     roulette.roulette('stop');
   });
+
+  // Go to next page
+  next.click(function() {
+    console.log('Next clicked');
+  })
 });
 

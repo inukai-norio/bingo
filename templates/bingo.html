@@ -21,10 +21,10 @@
           <span id="js-staff-name" class="staff-name">{{ dict_data.name }}さん</span>
         </div>
 
-        <div class="buttonarea">
-          <span id="js-roulette-start" class="start-button"><a class="button"></a></span>
+        <a id="js-next-page" class="next-button" href="{{ url_for('t', content_id=dict_data.next) }}"><img src="{{ url_for('static', filename='img/reload.png') }}" alt=""></a>
+        <div id="js-roulette-start" class="cover">
+          <span class="text">Click to Start!</span>
         </div>
-
       </div>
 
     </div>

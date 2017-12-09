@@ -1,5 +1,3 @@
-@import "vendor/tachyons.min";
-  
 html {
   width: 100%;
   height: 100%;
@@ -8,6 +6,8 @@ html {
 body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  background-color: #333;
 }
 
 /* トップページ */
@@ -39,7 +39,6 @@ body {
 .bingo-roulette {
   & {
     position: relative;
-    background-color: #000;
     overflow: hidden;
     height: 100%;
   }
@@ -48,7 +47,7 @@ body {
     position: relative;
 
     width: 100%;
-    height: 80%;
+    height: 100%;
   }
 
   > .container > .roulette {
@@ -72,6 +71,7 @@ body {
     display: none;
     padding: .8rem 2rem;
 
+    color: #333;
     background-color: skyblue;
   }
 
@@ -89,67 +89,43 @@ body {
     font-size: 6rem;
   }
 
-  > .buttonarea {
-    position: relative;
-    height: 20%;
-  }
-
-  > .buttonarea > .start-button {
+  > .cover {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
 
-    box-sizing: border-box;
-    height: 100%;
-  }
-}
-
-.start-button {
-  & {
-    display: inline-block;
-    padding: 1rem;
-
-    background: #7f1a1a;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4c0f0f), to(#7f1a1a));
-    background: -moz-linear-gradient(top,  #4c0f0f,  #7f1a1a);
-    background: -o-linear-gradient(top,  #4c0f0f,  #7f1a1a);
-    background: -ms-linear-gradient(top,  #4c0f0f,  #7f1a1a);
-    background: linear-gradient(top,  #4c0f0f,  #7f1a1a);
-    border-radius: 100%;
-
-    text-decoration: none;
-  }
-
-  > .button {
-    position: relative;
-
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
 
-    text-decoration: none;
-    color: darken(#7f1a1a, 10%);
-    text-shadow: 0px 1px 0px #a55e5e;
-    background: #7f1a1a;
-    background: -webkit-gradient(linear, left top, left bottom, from(#7f1a1a), to(#8b3030));
-    background: -moz-linear-gradient(top,  #7f1a1a,  #8b3030);
-    background: -o-linear-gradient(top,  #7f1a1a,  #8b3030);
-    background: linear-gradient(top,  #7f1a1a,  #8b3030);
-    border: 1px solid #a55e5e;
-    border-bottom: 1px solid #3f0d0d;
-    -webkit-box-shadow:  0 0 5px rgba(0, 0, 0, .7);
-    -moz-box-shadow:  0 0 5px rgba(0, 0, 0, .7);
-    box-shadow:  0 0 5px rgba(0, 0, 0, .7);
-    border-radius: 100%;
-
-    cursor: unset;
+    background-color: rgba(0, 0, 0, .65);
+    justify-content: center;
+    align-items: center;
   }
 
-  > .button:active {
-    background:#8b3030;
-    border: none;
-    -webkit-box-shadow:  0 1px 1px #b27575, inset 0 1px 1px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow:  0 1px 1px #b27575, inset 0 1px 1px rgba(0, 0, 0, 0.3);
-    box-shadow:  0 1px 1px #b27575, inset 0 1px 1px rgba(0, 0, 0, 0.3);
+  > .cover > .text {
+    font-size: 3rem;    
+    color: #fff;
+  }
+
+  > .next-button {
+    position: absolute;
+    top: 0;
+    right: 5%;
+
+    width: 10%;
+    margin-top: 5%;
+  }
+}
+
+.next-button {
+  display: none;
+  cursor: default;
+
+  > img {
+    width: 100%;
+  }
+
+  > .text {
+    color: #fff;
   }
 }
