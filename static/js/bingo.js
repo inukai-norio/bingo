@@ -15,8 +15,8 @@ $(function () {
   };
 
   var option = {
-    speed: 50,
-    duration: 6,
+    speed: 100,
+    duration: 0.3,
     stopImageNumber: dataset.imgNumber,
 
     // ルーレット回転開始
