@@ -34,6 +34,7 @@ $(function () {
       cymbal.play();
       showStaffInfo(staffId, staffName);
       next.show();
+      next.focus();
     }
   }
 
