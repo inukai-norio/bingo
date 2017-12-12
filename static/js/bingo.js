@@ -40,24 +40,8 @@ $(function () {
   // Init!
   roulette.roulette(option);
 
-  // Start & Stop
-  cover.state = 'initial';
-  cover.click(function(){
-    switch (cover.state) {
-      case 'initial':
-        cover.removeClass('-initial');
-        cover.addClass('-invisible');
-        cover.addClass('-reactive');
-        cover.state = 'invisible';
-        roulette.roulette('start');
-        break;
-
-      case 'invisible':
-        cover.removeClass('-reactive');
-        roulette.roulette('stop');
-        break;
-    }
-  });
+  // Start
+  roulette.roulette('start');
 
   // Go to next page
   next.click(function() {

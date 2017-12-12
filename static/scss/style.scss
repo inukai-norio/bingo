@@ -106,36 +106,6 @@ body {
   }
 }
 
-.app-cover {
-  & {
-    display: flex;
-    background-color: rgba(0, 0, 0, .65);
-    justify-content: center;
-    align-items: center;
-  }
-
-  &.-invisible {
-    opacity: 0;
-  }
-
-  &.-initial::before {
-    font-size: 3rem;    
-    color: #fff;
-    content: "Click to start";
-  }
-
-  &.-reactive:active {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, .65);
-  }
-
-  &.-reactive:active::before {
-    font-size: 5rem;
-    color: #fff;
-    content: "STOP!!";
-  }
-}
-
 .next-button {
   display: none;
   cursor: default;
