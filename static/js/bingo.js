@@ -4,7 +4,6 @@ $(function () {
   var roulette = $('#js-roulette');
   var staffId = $('#js-staff-id');
   var staffName = $('#js-staff-name');
-  var cover = $('#js-app-cover');
   var next = $('#js-next-page');
   var drumRoll = $('#js-drum-roll')[0];
   var cymbal = $('#js-cymbal')[0];

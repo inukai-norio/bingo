@@ -6,6 +6,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <a class="bingo-start-btn f1 br-pill bib black" style="background-color: #F48120" href="{{ url_for('t', content_id=0) }}">スタート！</a>
+    <a class="bingo-start-btn" href="{{ url_for('t', content_id=0) }}"><span class="text">スタート</span><img src="{{ url_for('static', filename='img/arrow_right.png') }}" alt="" width="3rem"></a>
 </body>
 </html>
