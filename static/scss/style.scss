@@ -33,6 +33,22 @@ body {
     width: 100%;
     height: 100%;
   }
+
+  > .next-button {
+    position: absolute;
+    top: 0;
+    right: 5%;
+
+    width: 10%;
+    margin-top: 5%;
+  }
+
+  > .app-cover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /* ルーレット */
@@ -87,33 +103,6 @@ body {
     right: 0;
 
     font-size: 6rem;
-  }
-
-  > .cover {
-    position: absolute;
-    top: 0;
-
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 0, 0, .65);
-    justify-content: center;
-    align-items: center;
-  }
-
-  > .cover > .text {
-    font-size: 3rem;    
-    color: #fff;
-  }
-
-  > .next-button {
-    position: absolute;
-    top: 0;
-    right: 5%;
-
-    width: 10%;
-    margin-top: 5%;
   }
 }
 

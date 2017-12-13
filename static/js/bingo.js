@@ -4,9 +4,10 @@ $(function () {
   var roulette = $('#js-roulette');
   var staffId = $('#js-staff-id');
   var staffName = $('#js-staff-name');
-  var start = $('#js-roulette-start');
-  var stop = undefined;
+  var cover = $('#js-app-cover');
   var next = $('#js-next-page');
+  var drumRoll = $('#js-drum-roll')[0];
+  var cymbal = $('#js-cymbal')[0];
 
   var showStaffInfo = function (id, name) {
     id.show();
@@ -14,46 +15,38 @@ $(function () {
   };
 
   var option = {
-    speed: 50,
-    duration: 4,
+    speed: 100,
+    duration: 0.3,
     stopImageNumber: dataset.imgNumber,
 
     // ルーレット回転開始
     startCallback: function() {
-      start.hide();
-      console.log('start');
+      drumRoll.play();
     },
 
     // ルーレット減速開始
     slowDownCallback: function() {
-      console.log('slowDown');
     },
 
     // ルーレット停止
-    stopCallback: function($stopElm) {
-      console.log('stop');
-
+    stopCallback: function ($stopElm) {
+      drumRoll.pause();
+      cymbal.play();
       showStaffInfo(staffId, staffName);
       next.show();
+      next.focus();
     }
   }
 
   // Init!
   roulette.roulette(option);
 
-  // START!
-  start.click(function(){
-    roulette.roulette('start');
-  });
-
-  // STOP!
-  stop.click(function(){
-    roulette.roulette('stop');
-  });
+  // Start
+  roulette.roulette('start');
 
   // Go to next page
   next.click(function() {
     console.log('Next clicked');
-  })
+  });
 });
 
